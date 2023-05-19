@@ -8,7 +8,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Danilo
 
 steps:
 - task: SonarCloudPrepare@1
@@ -39,3 +39,4 @@ steps:
     repository: 'fastapi'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
