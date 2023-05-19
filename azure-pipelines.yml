@@ -33,3 +33,9 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: 'fastapi'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
