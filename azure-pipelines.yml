@@ -10,10 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: pip install --no-cache-dir --upgrade -r requirements.txt
+  displayName: 'Install dependencies'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: python -m unittest discover tests
+  displayName: 'Unit test'
